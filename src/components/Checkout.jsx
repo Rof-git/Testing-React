@@ -7,7 +7,7 @@ export function Checkout({  }) {
 
   return (
     <div>
-        
+        <h4>Checkout Page</h4>
     </div>
   );
 }

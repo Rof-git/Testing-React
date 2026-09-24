@@ -1,15 +1,13 @@
-export function ProductList({ products }) {
+import { useState } from 'react';
+
+export function ProductList({  }) {
+
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState('');
 
   return (
     <div>
-      <h4>Products</h4>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            {product.name} - ${product.price} / kg
-          </li>
-        ))}
-      </ul>
+        <h4>Current Shopping List</h4>
     </div>
   );
 }

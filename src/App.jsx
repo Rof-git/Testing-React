@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ProductForm } from './components/ProductForm';
+import { ProductPage } from './components/ProductPage';
 import { ProductList } from './components/ProductList';
 import { Checkout } from './components/Checkout';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -16,23 +16,21 @@ export function App() {
     {id: 6, name: 'orange', price: 1.25}
   ]);
 
-  const MenuProducts = () => <h2>Products</h2>;
-  const MenuList = () => <h2>List</h2>;
-  const MenuCheckout = () => <h2>Checkout</h2>;
+  const { cart, handleAddToCart, handleFinishCheckout } = useCart();
 
   return(
     <div>
         <Router>
-            <nav class='navStyle'>
-                <div class='navItems'><Link to="/products">Products</Link></div>
-                <div class='navItems'><Link to="/list">List</Link></div>
-                <div class='navItems'><Link to="/checkout">Checkout</Link></div>
+            <nav className='navStyle'>
+                <div className='navItems'><Link to="/products">Products</Link></div>
+                <div className='navItems'><Link to="/list">List</Link></div>
+                <div className='navItems'><Link to="/checkout">Checkout</Link></div>
             </nav>
             <div>
                 <Routes>
-                <Route path="/products" element={<MenuProducts/>} />
-                <Route path="/list" element={<MenuList/>} />
-                <Route path="/checkout" element={<MenuCheckout />} />
+                <Route path="/products" element={<ProductPage products={products}/>}/>
+                <Route path="/list" element={<ProductList/>}/>
+                <Route path="/checkout" element={<Checkout />}/>
                 </Routes>
             </div>
         </Router>

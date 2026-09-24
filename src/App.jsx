@@ -16,7 +16,7 @@ export function App() {
     {id: 6, name: 'orange', price: 1.25}
   ]);
 
-  const { cart, handleAddToCart, handleFinishCheckout } = useCart();
+  // Agregar Luego const { cart, handleAddToCart, handleFinishCheckout } = useCart();
 
   return(
     <div>

@@ -1,0 +1,23 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navStyle {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    background-color: rgb(220, 244, 219);
+}
+
+.navItems{
+    width: 8%;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navItems a:hover{
+    background-color: black;
+    color: white;
+}

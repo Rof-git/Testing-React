@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ProductListCSS.css';
 
 export function ProductList({ cart, total, clearCart }) {
@@ -12,6 +13,12 @@ export function ProductList({ cart, total, clearCart }) {
         setIsClearing(false);
     }, 600);
   }
+
+  const navigate = useNavigate();
+
+  const goToCheckout = () => {
+    navigate('/checkout');
+  };
 
   return (
     <div class='mainDiv'>
@@ -28,6 +35,8 @@ export function ProductList({ cart, total, clearCart }) {
         ))}
       </ul>
       <h3>Total: {total}$</h3>
+      <button onClick={goToCheckout} className="nav-button"> Go to Checkout </button>
+      <p>Or maybe...</p>
       <button onClick={handleClear}>Clear cart</button>
     </div>
   );

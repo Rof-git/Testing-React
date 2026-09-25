@@ -56,12 +56,12 @@ h4{
 
 .mainDiv {
     width: 100%;
-    max-width: 600px;        /* Un ancho máximo para que no se estire demasiado */
-    margin: 0 auto;          /* Asegura el centrado si no se usa flex en el body */
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;  /* Pone los elementos internos uno debajo del otro */
-    align-items: center;     /* Centra el contenido interno horizontalmente */
-    text-align: center;      /* Centra los textos */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;

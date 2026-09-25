@@ -1,6 +1,6 @@
 .product-list-container {
   padding: 20px;
-  overflow: hidden; /* Oculta los elementos cuando salgan de la pantalla */
+  overflow: hidden;
 }
 
 .cart-list {

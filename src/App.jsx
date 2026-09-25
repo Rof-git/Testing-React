@@ -2,21 +2,22 @@ import { useState } from 'react'
 import { ProductPage } from './components/ProductPage';
 import { ProductList } from './components/ProductList';
 import { Checkout } from './components/Checkout';
+import { useCart } from './hooks/useCart';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css'
 
 export function App() {
 
   const [products, setProducts] = useState([
-    {id: 1, name: 'banana', price: 1.30},
-    {id: 2, name: 'apple', price: 1.45},
-    {id: 3, name: 'melon', price: 2.40},
-    {id: 4, name: 'kiwi', price: 1},
-    {id: 5, name: 'watermelon', price: 2.40},
-    {id: 6, name: 'orange', price: 1.25}
+    {id: 1, name: 'Banana', price: 1.20, quantity: 0},
+    {id: 2, name: 'Apple', price: 1.45, quantity: 0},
+    {id: 3, name: 'Melon', price: 2.40, quantity: 0},
+    {id: 4, name: 'Kiwi', price: 1, quantity: 0},
+    {id: 5, name: 'Watermelon', price: 2.40, quantity: 0},
+    {id: 6, name: 'Orange', price: 1.25, quantity: 0}
   ]);
 
-  // Agregar Luego const { cart, handleAddToCart, handleFinishCheckout } = useCart();
+  const { cart, total, addToCart, clearCart } = useCart();
 
   return(
     <div>
@@ -28,9 +29,9 @@ export function App() {
             </nav>
             <div>
                 <Routes>
-                <Route path="/products" element={<ProductPage products={products}/>}/>
-                <Route path="/list" element={<ProductList/>}/>
-                <Route path="/checkout" element={<Checkout />}/>
+                <Route path="/products" element={<ProductPage products={products} addToCart={addToCart}/>}/>
+                <Route path="/list" element={<ProductList cart={cart} clearCart={clearCart} total={total}/>}/>
+                <Route path="/checkout" element={<Checkout cart={cart} total={total}/>}/>
                 </Routes>
             </div>
         </Router>

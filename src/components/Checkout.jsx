@@ -1,13 +1,11 @@
-import { useState } from 'react';
+import './CheckoutCSS.css';
 
 export function Checkout({  }) {
 
-  const [name, setName] = useState('');
-  const [price, setPrice] = useState('');
-
   return (
-    <div>
+    <div class='mainDiv'>
         <h4>Checkout Page</h4>
+        <button>Checkout</button>
     </div>
   );
 }

@@ -11,7 +11,7 @@ export function ProductList({ cart, total, clearCart }) {
     setTimeout(() => {
         clearCart();
         setIsClearing(false);
-    }, 600);
+    }, 620);
   }
 
   const navigate = useNavigate();
@@ -34,8 +34,8 @@ export function ProductList({ cart, total, clearCart }) {
           </li>
         ))}
       </ul>
-      <h3>Total: {total}$</h3>
-      <button onClick={goToCheckout} className="nav-button"> Go to Checkout </button>
+      <h3>Total: {total.toFixed(2)}$</h3>
+      <button onClick={goToCheckout} className="nav-button">Go to Checkout</button>
       <p>Or maybe...</p>
       <button onClick={handleClear}>Clear cart</button>
     </div>

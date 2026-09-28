@@ -29,9 +29,9 @@ export function App() {
             </nav>
             <div>
                 <Routes>
-                <Route path="/products" element={<ProductPage products={products} addToCart={addToCart}/>}/>
-                <Route path="/list" element={<ProductList cart={cart} clearCart={clearCart} total={total}/>}/>
-                <Route path="/checkout" element={<Checkout cart={cart} total={total}/>}/>
+                    <Route path="/products" element={<ProductPage products={products} addToCart={addToCart}/>}/>
+                    <Route path="/list" element={<ProductList cart={cart} clearCart={clearCart} total={total}/>}/>
+                    <Route path="/checkout" element={<Checkout cart={cart} total={total}/>}/>
                 </Routes>
             </div>
         </Router>

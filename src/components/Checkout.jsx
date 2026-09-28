@@ -8,14 +8,14 @@ export function Checkout({ cart }) {
     if (cart.length > 0) {
         setMessage('Checkout successful');
     } else {
-        setMessage('Cannot checkout, cart is empty');
+        setMessage('Cannot checkout, shopping list is empty');
     }
 
     setTimeout(() => {setMessage('')}, 2000);
   };
 
   return (
-    <div class='mainDiv'>
+    <div className='mainDiv'>
         <h4>Checkout Page</h4>
         {message && <p>{message}</p>}
         {!message && <button onClick={handleCheckout}>Checkout</button>}

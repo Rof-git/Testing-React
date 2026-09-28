@@ -21,7 +21,7 @@ export function ProductPage({ products, addToCart }) {
   };
 
   return (
-    <div class='mainDiv'>
+    <div className='mainDiv'>
       <h4>Our Products</h4>
       <ul>
         {products.map((product) => (
